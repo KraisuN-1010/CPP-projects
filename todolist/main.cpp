@@ -70,7 +70,7 @@ public:
        for(auto t : taskCompletion){
         if (t.second )
         {
-            /* code */
+            cout << "i hope everything is fine after this";
         }
         
        }
