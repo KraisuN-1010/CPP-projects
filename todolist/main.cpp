@@ -103,8 +103,6 @@ int main() {
     string name;
     getline(cin,name);
     task.completeTask(name);
-    cout << "hello uday monkey"<<endl;
-    cout << "Bol ne pari vandri" << endl;
 
     return 0;
 }
