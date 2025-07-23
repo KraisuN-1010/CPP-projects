@@ -137,22 +137,21 @@ public:
     {
         taskCompletion[taskName] = true;
     }
-<<<<<<< HEAD
     void displayMenu(){
         cout << "----- WELCOME TO TO-DO LIST -----" << endl;
-=======
 };
 
 int main()
 {
     cout << "----- WELCOME TO TO-DO LIST -----" << endl;
->>>>>>> 05dcaf2a6f5ca0af12460872f6a07d66215e79ba
-    cout << "addTask(name, desc)         : Add a new task with description." << endl;
-    cout << "showTask(number)            : Show a task by its number." << endl;
-    cout << "showAllTasks()              : List all tasks." << endl;
-    cout << "showDesc(name)              : Show the description of a task." << endl;
-    cout << "completedTask(name)         : Shows all completed tasks (name is unused)." << endl;
-    cout << "incompleteTask(name)        : Misleading - currently marks task as complete." << endl;
+    cout << "addTask(name, desc)[enter 1]      : Add a new task with description." << endl;
+    cout << "showTask(number)  [enter 2]        : Show a task by its number." << endl;
+    cout << "showAllTasks()  [enter 3]          : List all tasks." << endl;
+    cout << "showDesc(name) [enter 4]           : Show the description of a task." << endl;
+    cout << "editTask(name)    [enter 5]    : edit the task." << endl;
+    cout << "completedTask(name) [enter 6]       : Shows all completed tasks (name is unused)." << endl;
+    cout << "incompleteTask(name) [enter 7]       : Misleading - currently marks task as complete." << endl;
+    cout << "enter 8 to exit the code"<< endl;
     }
 };
 
