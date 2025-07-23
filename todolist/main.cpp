@@ -5,7 +5,28 @@
 #include <vector>
 using namespace std;
 
+enum Priority {LOW, MEDIUM, HIGH};
+enum Status {PENDING, COMPLETED};
 
+class Task {
+    static int nextId;
+    int id;
+    string title;
+    string description;
+    Status status;
+    Priority priority;
+    string dueDate;
+
+
+    //Constructor
+    Task(string t, string desc = "", Priority p = MEDIUM, string due = "") 
+        : id(nextId++), title(t), description(desc), status(PENDING), 
+          priority(p), dueDate(due) {}
+    
+    //Getter
+    
+    
+};
 
 class Task {
 private:
