@@ -24,12 +24,31 @@ class Task {
         : id(nextId++), title(t), description(desc), status(PENDING), 
           priority(p), dueDate(due) {}
     
-    //Getter
-    
-    
+    //Getters
+    int getId() const { return id; }
+    string getTitle() const {return title;}
+    Status getStatus() const { return status; }
+    Priority getPriority() const { return priority; }
+    string getDue() const { return dueDate; }
+
+    //Setters
+    void setTitle(string title) {this->title =  title;}
+    void setDesc(string desc) { description = desc; }
+    void setPrio(Priority p) { priority = p; }
+    void markComplete() { this->status = COMPLETED; }
+
+    //Display task specific info
+    void display() const {
+        cout << "[" << id << "] " << title;
+        cout << " (" << (status == COMPLETED ? "✓" : "○") << ")";
+        if (priority == HIGH) cout << " [HIGH]";
+        cout << endl;
+    }
+
 };
 
-class Task {
+int Task::nextId = 1;
+
 class TaskManager {
 private:
     int numOfTasks = 0;           // Keeps track of total tasks
