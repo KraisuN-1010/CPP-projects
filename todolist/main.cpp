@@ -2,10 +2,17 @@
 #include <iomanip>
 #include <map>
 #include <string>
+#include <vector>
 using namespace std;
 
+<<<<<<< HEAD
 class Task
 {
+=======
+
+
+class Task {
+>>>>>>> b163611aba4cc2d06459f874154d2c3e70d4030a
 private:
     int numOfTasks = 0;           // Keeps track of total tasks
     map<int, string> taskList;    // Maps task number to task name
