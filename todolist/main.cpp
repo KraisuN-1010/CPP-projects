@@ -152,8 +152,19 @@ int main()
     cout << "completedTask(name) [enter 6]       : Shows all completed tasks (name is unused)." << endl;
     cout << "incompleteTask(name) [enter 7]       : Misleading - currently marks task as complete." << endl;
     cout << "enter 8 to exit the code"<< endl;
-    }
+    
 };
+
+void displayMenu(){
+        cout << "----- WELCOME TO TO-DO LIST -----" << endl;
+        cout << "----- WELCOME TO TO-DO LIST -----" << endl;
+        cout << "addTask(name, desc)         : Add a new task with description." << endl;
+        cout << "showTask(number)            : Show a task by its number." << endl;
+        cout << "showAllTasks()              : List all tasks." << endl;
+        cout << "showDesc(name)              : Show the description of a task." << endl;
+        cout << "completedTask(name)         : Shows all completed tasks (name is unused)." << endl;
+        cout << "incompleteTask(name)        : Misleading - currently marks task as complete." << endl;
+    }
 
 int main()
 {
@@ -161,7 +172,7 @@ int main()
     int choice;
 
     do {
-        tm.displayMenu();
+        displayMenu();
         cin >> choice;
         cin.ignore(); // To ignore newline left by cin
 
