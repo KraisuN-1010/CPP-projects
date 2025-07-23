@@ -4,15 +4,7 @@
 #include <string>
 #include <vector>
 using namespace std;
-
-<<<<<<< HEAD
-class Task
-{
-=======
-
-
-class Task {
->>>>>>> b163611aba4cc2d06459f874154d2c3e70d4030a
+class TaskManager {
 private:
     int numOfTasks = 0;           // Keeps track of total tasks
     map<int, string> taskList;    // Maps task number to task name
@@ -104,7 +96,7 @@ public:
 
 int main()
 {
-    Task task;
+    TaskManager task;
     cout << "----- WELCOME TO TO-DO LIST -----" << endl;
     cout << "addTask(name, desc)         : Add a new task with description." << endl;
     cout << "showTask(number)            : Show a task by its number." << endl;
