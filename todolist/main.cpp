@@ -18,7 +18,7 @@ class Task {
     Priority priority;
     string dueDate;
 
-
+public:
     //Constructor
     Task(string t, string desc = "", Priority p = MEDIUM, string due = "") 
         : id(nextId++), title(t), description(desc), status(PENDING), 
@@ -40,7 +40,7 @@ class Task {
     //Display task specific info
     void display() const {
         cout << "[" << id << "] " << title;
-        cout << " (" << (status == COMPLETED ? "✓" : "○") << ")";
+        cout << " (" << (status == COMPLETED ? "Complete" : "incomplete") << ")";
         if (priority == HIGH) cout << " [HIGH]";
         cout << endl;
     }
@@ -141,7 +141,6 @@ public:
 
 int main()
 {
-    TaskManager task;
     cout << "----- WELCOME TO TO-DO LIST -----" << endl;
     cout << "addTask(name, desc)         : Add a new task with description." << endl;
     cout << "showTask(number)            : Show a task by its number." << endl;
