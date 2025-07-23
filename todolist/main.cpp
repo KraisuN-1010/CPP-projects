@@ -137,17 +137,88 @@ public:
     {
         taskCompletion[taskName] = true;
     }
+    
 };
+
+void displayMenu(){
+        cout << "----- WELCOME TO TO-DO LIST -----" << endl;
+        cout << "----- WELCOME TO TO-DO LIST -----" << endl;
+        cout << "addTask(name, desc)         : Add a new task with description." << endl;
+        cout << "showTask(number)            : Show a task by its number." << endl;
+        cout << "showAllTasks()              : List all tasks." << endl;
+        cout << "showDesc(name)              : Show the description of a task." << endl;
+        cout << "completedTask(name)         : Shows all completed tasks (name is unused)." << endl;
+        cout << "incompleteTask(name)        : Misleading - currently marks task as complete." << endl;
+    }
 
 int main()
 {
-    cout << "----- WELCOME TO TO-DO LIST -----" << endl;
-    cout << "addTask(name, desc)         : Add a new task with description." << endl;
-    cout << "showTask(number)            : Show a task by its number." << endl;
-    cout << "showAllTasks()              : List all tasks." << endl;
-    cout << "showDesc(name)              : Show the description of a task." << endl;
-    cout << "completedTask(name)         : Shows all completed tasks (name is unused)." << endl;
-    cout << "incompleteTask(name)        : Misleading - currently marks task as complete." << endl;
+    TaskManager tm;
+    int choice;
+
+    do {
+        displayMenu();
+        cin >> choice;
+        cin.ignore(); // To ignore newline left by cin
+
+        switch (choice) {
+            case 1: {
+                string name, desc;
+                cout << "Enter task name: ";
+                getline(cin, name);
+                cout << "Enter task description: ";
+                getline(cin, desc);
+                tm.addTask(name, desc);
+                break;
+            }
+            case 2: {
+                int num;
+                cout << "Enter task number: ";
+                cin >> num;
+                tm.showTask(num);
+                break;
+            }
+            case 3:
+                tm.showAllTasks();
+                break;
+            case 4: {
+                string name;
+                cout << "Enter task name: ";
+                cin.ignore();
+                getline(cin, name);
+                tm.showDesc(name);
+                break;
+            }
+            case 5: {
+                string name, newDesc;
+                cout << "Enter task name: ";
+                cin.ignore();
+                getline(cin, name);
+                cout << "Enter new description: ";
+                getline(cin, newDesc);
+                tm.editDesc(name, newDesc);
+                break;
+            }
+            case 6: {
+                string name;
+                cout << "Enter task name to mark complete: ";
+                cin.ignore();
+                getline(cin, name);
+                tm.completeTask(name);
+                break;
+            }
+            case 7: {
+                tm.completedTask("");
+                break;
+            }
+            case 8:
+                cout << "Exiting program." << endl;
+                break;
+            default:
+                cout << "Invalid choice. Try again." << endl;
+        }
+
+    } while (choice != 8);
 
     return 0;
 }
