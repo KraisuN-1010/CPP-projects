@@ -4,6 +4,51 @@
 #include <string>
 #include <vector>
 using namespace std;
+
+
+enum Priority {LOW, MEDIUM, HIGH};
+enum Status {PENDING, COMPLETED};
+
+class Task {
+    static int nextId;
+    int id;
+    string title;
+    string description;
+    Status status;
+    Priority priority;
+    string dueDate;
+
+public:
+    //Constructor
+    Task(string t, string desc = "", Priority p = MEDIUM, string due = "") 
+        : id(nextId++), title(t), description(desc), status(PENDING), 
+          priority(p), dueDate(due) {}
+    
+    //Getters
+    int getId() const { return id; }
+    string getTitle() const {return title;}
+    Status getStatus() const { return status; }
+    Priority getPriority() const { return priority; }
+    string getDue() const { return dueDate; }
+
+    //Setters
+    void setTitle(string title) {this->title =  title;}
+    void setDesc(string desc) { description = desc; }
+    void setPrio(Priority p) { priority = p; }
+    void markComplete() { this->status = COMPLETED; }
+
+    //Display task specific info
+    void display() const {
+        cout << "[" << id << "] " << title;
+        cout << " (" << (status == COMPLETED ? "Complete" : "incomplete") << ")";
+        if (priority == HIGH) cout << " [HIGH]";
+        cout << endl;
+    }
+
+};
+
+int Task::nextId = 1;
+
 class TaskManager {
 private:
     int numOfTasks = 0;           // Keeps track of total tasks
@@ -92,8 +137,16 @@ public:
     {
         taskCompletion[taskName] = true;
     }
+<<<<<<< HEAD
     void displayMenu(){
         cout << "----- WELCOME TO TO-DO LIST -----" << endl;
+=======
+};
+
+int main()
+{
+    cout << "----- WELCOME TO TO-DO LIST -----" << endl;
+>>>>>>> 05dcaf2a6f5ca0af12460872f6a07d66215e79ba
     cout << "addTask(name, desc)         : Add a new task with description." << endl;
     cout << "showTask(number)            : Show a task by its number." << endl;
     cout << "showAllTasks()              : List all tasks." << endl;
