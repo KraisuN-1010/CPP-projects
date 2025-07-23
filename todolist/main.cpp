@@ -30,6 +30,7 @@ class Task {
 };
 
 class Task {
+class TaskManager {
 private:
     int numOfTasks = 0;           // Keeps track of total tasks
     map<int, string> taskList;    // Maps task number to task name
@@ -121,7 +122,7 @@ public:
 
 int main()
 {
-    Task task;
+    TaskManager task;
     cout << "----- WELCOME TO TO-DO LIST -----" << endl;
     cout << "addTask(name, desc)         : Add a new task with description." << endl;
     cout << "showTask(number)            : Show a task by its number." << endl;
